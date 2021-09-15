@@ -1,3 +1,10 @@
+/*package whatever //do not write package name here */
+
+import java.io.*;
+
+class GFG {
+    
+    
     void floodFill(int sr, int sc, int dr, int dc, int maze[][], boolean visited[][], int direction[][], 
     String directionStr[], String ans) {
         
@@ -29,13 +36,13 @@
         //Loop on all possible direction in terms of a direction array        
         for(int i=0;i<direction.length;i++)
         {
-          sr = sr + direction[i][0];
-          sc = sc + direction[i][1];
+          r = sr + direction[i][0];
+          c = sc + direction[i][1];
           
           //Since left and down bhi jaa rhe hn, so we need to check for negative values also, along 
           //with ki matrix se bahar na chle jaayein and visited na kia ho
-          if(sr>=0 && sc>=0 && sr<m && sc<n && !visited[sr][sc])
-            count+=maze(sr+1,sc,dr,dc,maze, directionStr[i]+str);
+          if(r>=0 && c>=0 && r<m && c<n && !visited[r][c])
+            count+=maze(r,c,dr,dc,maze, directionStr[i]+str);
         }
     
         
@@ -44,3 +51,12 @@
         return count;
         
     }
+    
+    
+    
+    
+    
+	public static void main (String[] args) {
+		System.out.println("GfG!");
+	}
+}
